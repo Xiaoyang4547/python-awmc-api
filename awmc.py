@@ -66,3 +66,62 @@ def userdata(token,qrcode):
     print('首次游玩版本:'+str(data['userData']['firstRomVersion']))
     print('首次游玩版本:'+str(data['userData']['firstDataVersion']))
     print('首次游玩时间:'+str(data['userData']['firstPlayDate']))
+
+def ticket(token,qrcode,chargeId=2):
+    token={
+        "Authorization":'Bearer '+token
+    }
+    if chargeId==2 or chargeId==3 or chargeId==5:
+        payload={
+            "qrcode":qrcode,
+            "chargeId":chargeId,
+        }
+    else:
+        print('参数chargeId仅允许 2/3/5:2倍票/3倍票/5倍票')
+        return
+    data=post('https://api.wmc.pub/v1/charge',headers=token,json=payload)
+    print(data)
+
+def updatelx(token,qrcode,key):
+    token={
+        "Authorization":'Bearer '+token
+    }
+    payload={
+        "qrcode":qrcode,
+        "key":key,
+    }
+    data=post('https://api.wmc.pub/v1/update-lx',headers=token,json=payload)
+    print(data)
+
+def maiulx(token,qrcode,key):
+    token={
+        "Authorization":'Bearer '+token
+    }
+    payload={
+        "qrcode":qrcode,
+        "key":key,
+    }
+    data=post('https://api.wmc.pub/v1/update-lx',headers=token,json=payload)
+    print(data)
+
+def updatefish(token,qrcode,key):
+    token={
+        "Authorization":'Bearer '+token
+    }
+    payload={
+        "qrcode":qrcode,
+        "token":key,
+    }
+    data=post('https://api.wmc.pub/v1/update-lx',headers=token,json=payload)
+    print(data)
+
+def maiu(token,qrcode,key):
+    token={
+        "Authorization":'Bearer '+token
+    }
+    payload={
+        "qrcode":qrcode,
+        "token":key,
+    }
+    data=post('https://api.wmc.pub/v1/update-lx',headers=token,json=payload)
+    print(data)
