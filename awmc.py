@@ -67,6 +67,16 @@ def userdata(token,qrcode):
     print('首次游玩版本:'+str(data['userData']['firstDataVersion']))
     print('首次游玩时间:'+str(data['userData']['firstPlayDate']))
 
+'''def userpreview(token,qrcode):
+    token={
+        "Authorization":'Bearer '+token
+    }
+    payload={
+        "qrcode":qrcode
+    }
+    post('https://api.wmc.pub/v1/user/preview',headers=token,json=payload)
+    与userdata功能相近，鸽一下('''
+
 def ticket(token,qrcode,chargeId=2):
     token={
         "Authorization":'Bearer '+token
