@@ -36,8 +36,8 @@ def userdata(token,qrcode):
     else:
         print('封禁状态:未知')
     print('总Rating:'+str(data["userData"]['playerRating']))
-    print('旧版本Rating:'+str(data["userData"]['playerOldRating']))
-    print('新版本Rating:'+str(data["userData"]['playerNewRating']))
+    print('旧版本Rating(B35):'+str(data["userData"]['playerOldRating']))
+    print('新版本Rating(B15):'+str(data["userData"]['playerNewRating']))
     print('段位:'+str(data['userData']['courseRank'])+'段')
     print('收藏品信息:')
     print('头像ID:'+str(data['userData']['iconId']))
