@@ -101,7 +101,7 @@ def updatelx(token,qrcode,key):
         "key":key,
     }
     data=post('https://api.wmc.pub/v1/update-lx',headers=token,json=payload)
-    print(data)
+    print(data.text())
 
 def maiulx(token,qrcode,key):
     token={
@@ -112,7 +112,7 @@ def maiulx(token,qrcode,key):
         "key":key,
     }
     data=post('https://api.wmc.pub/v1/update-lx',headers=token,json=payload)
-    print(data)
+    print(data.text())
 
 def updatefish(token,qrcode,key):
     token={
@@ -123,7 +123,7 @@ def updatefish(token,qrcode,key):
         "token":key,
     }
     data=post('https://api.wmc.pub/v1/update-lx',headers=token,json=payload)
-    print(data)
+    print(data.text())
 
 def maiu(token,qrcode,key):
     token={
@@ -134,4 +134,4 @@ def maiu(token,qrcode,key):
         "token":key,
     }
     data=post('https://api.wmc.pub/v1/update-lx',headers=token,json=payload)
-    print(data)
+    print(data.text())
